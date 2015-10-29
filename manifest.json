@@ -1,0 +1,24 @@
+{ 
+   "name": "Lisa", 
+   "version" : "1.0",
+   "manifest_version": 2,
+   "icons": { "128": "resource/icon.png" },
+   "description": "This is a chrome extension, She is Lisa", 
+   "browser_action": {
+      "default_icon": "resource/icon.png"
+   },
+   "permissions":[
+      "tabs",
+      "http://*/*",
+      "https://*/*"
+   ],
+   "content_scripts":[{
+		"js":["resource/jquery.js","index.js"],
+		"matches":["http://*/*","https://*/*"],
+		"run_at":"document_end"
+	}],
+   "background": {
+      "scripts": ["resource/jquery.js","resource/back/index.js"],
+      "persistent": true
+   }
+}
